@@ -1,5 +1,9 @@
 {
   "hosting": {
-    "public": "dist/my-e-shop"
+    "public": "dist/my-e-shop",
+    "rewrites": [ {
+      "source": "**",
+      "destination": "/index.html"
+    } ]
   }
 }
