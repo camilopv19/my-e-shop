@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
+
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ export class CategoryService {
 
   getCategories(){
     return this.db.list('categories', (cats) => {
-      return cats.orderByChild('name');
-    });
+      return cats.orderByChild('name');     //Sort
+    }); 
   }
 }
