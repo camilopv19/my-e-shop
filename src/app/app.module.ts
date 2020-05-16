@@ -25,7 +25,9 @@ import { ProductFormComponent } from './admin/product-form/product-form.componen
 import { CategoryService } from './category.service';
 import { FormsModule } from '@angular/forms';
 import { ProductService } from './product.service';
-import { CustomFormsModule } from 'ng2-validation'
+import { ValidatorDirective } from './validation-directives/validator.directive';
+import { UrlDirective } from './validation-directives/url.directive';
+
 
 @NgModule({
   declarations: [
@@ -40,10 +42,12 @@ import { CustomFormsModule } from 'ng2-validation'
     AdminProductsComponent,
     AdminOrdersComponent,
     LoginComponent,
-    ProductFormComponent
+    ProductFormComponent,
+    
+    ValidatorDirective,
+    UrlDirective
   ],
   imports: [
-    CustomFormsModule,
     FormsModule,
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),
