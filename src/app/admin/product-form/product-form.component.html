@@ -48,7 +48,7 @@
   </div>
   <div class="col-md-6">
     <div class="card" style="width: 18rem;">
-      <img *ngIf="product.imageUrl" [src]="imageUrl.value" class="card-img-top">
+      <img *ngIf="product.imageUrl" [src]="product.imageUrl" class="card-img-top">
       <div class="card-body">
         <h5 class="card-title">{{ title.value }}</h5>
         <p class="card-text">{{ price.value | currency:'USD':'symbol-narrow' }}</p> <!-- Angular v5 uptaded this way of currency pipe--> 

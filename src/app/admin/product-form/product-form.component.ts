@@ -15,13 +15,17 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class ProductFormComponent implements OnInit {
   categories$: Observable<any[]>;
-  product = {};           //When the form is initialized with the New Product button, the template will try to read all the props of
-                          //the 'undefined' object, that's why this is empty at the beggining
+  product: ProductInterface ={
+    title: '',
+    price: null,
+    category: '',
+    imageUrl: ''};           //When the form is initialized with the New Product button, the template will try to read all the props of
+  //the 'undefined' object, that's why this is empty at the beggining
 
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private categoryService: CategoryService, 
+    private categoryService: CategoryService,
     private productService: ProductService) {
 
     this.categories$ = categoryService.getCategories().snapshotChanges().pipe(
@@ -33,7 +37,7 @@ export class ProductFormComponent implements OnInit {
     );
 
     let id = this.route.snapshot.paramMap.get('id');
-    if (id) this.productService.get(id).valueChanges().pipe(take(1)).subscribe(p => this.product = p);
+    if (id) this.productService.get(id).valueChanges().pipe(take(1)).subscribe( (p:ProductInterface) => this.product = p);
   }
 
   save(product) {
@@ -46,3 +50,11 @@ export class ProductFormComponent implements OnInit {
   }
 
 }
+
+export interface ProductInterface {
+  title: String;
+  price: Number;
+  category: String;
+  imageUrl: String;
+}
+
