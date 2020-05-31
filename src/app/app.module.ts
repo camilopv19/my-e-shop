@@ -27,7 +27,7 @@ import { FormsModule } from '@angular/forms';
 import { ProductService } from './product.service';
 import { ValidatorDirective } from './validation-directives/validator.directive';
 import { UrlDirective } from './validation-directives/url.directive';
-
+import { NgxDataTableModule } from 'angular-9-datatable';
 
 @NgModule({
   declarations: [
@@ -48,6 +48,7 @@ import { UrlDirective } from './validation-directives/url.directive';
     UrlDirective
   ],
   imports: [
+    NgxDataTableModule,
     FormsModule,
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),

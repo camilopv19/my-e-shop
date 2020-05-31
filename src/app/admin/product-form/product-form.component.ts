@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { map, take } from 'rxjs/operators';
 import { ProductService } from 'src/app/product.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Product } from 'src/app/models/product';
 
 // See implementation example at https://github.com/camilopv19/firebase-demo/blob/master/src/app/app.component.ts
 // See implementation example at https://github.com/camilopv19/firebase-demo/blob/master/src/app/app.component.html
@@ -15,7 +16,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class ProductFormComponent implements OnInit {
   categories$: Observable<any[]>;
-  product: ProductInterface = {
+  product: Product = {
     title: '',
     price: null,
     category: '',
@@ -39,7 +40,7 @@ export class ProductFormComponent implements OnInit {
     );
 
     this.id = this.route.snapshot.paramMap.get('id');
-    if (this.id) this.productService.get(this.id).valueChanges().pipe(take(1)).subscribe((p: ProductInterface) => this.product = p);
+    if (this.id) this.productService.get(this.id).valueChanges().pipe(take(1)).subscribe((p: Product) => this.product = p);
   }
 
   save(product) {
@@ -63,10 +64,5 @@ export class ProductFormComponent implements OnInit {
 
 }
 
-export interface ProductInterface {
-  title: String;
-  price: Number;
-  category: String;
-  imageUrl: String;
-}
+
 
