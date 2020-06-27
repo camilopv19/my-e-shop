@@ -28,6 +28,8 @@ import { ProductService } from './product.service';
 import { ValidatorDirective } from './validation-directives/validator.directive';
 import { UrlDirective } from './validation-directives/url.directive';
 import { NgxDataTableModule } from 'angular-9-datatable';
+import { ProductsFilterComponent } from './products/products-filter/products-filter.component';
+import { ProductCardComponent } from './product-card/product-card.component';
 
 @NgModule({
   declarations: [
@@ -43,9 +45,12 @@ import { NgxDataTableModule } from 'angular-9-datatable';
     AdminOrdersComponent,
     LoginComponent,
     ProductFormComponent,
+    ProductsFilterComponent,
     
     ValidatorDirective,
-    UrlDirective
+    UrlDirective,
+    ProductsFilterComponent,
+    ProductCardComponent
   ],
   imports: [
     NgxDataTableModule,
@@ -56,7 +61,7 @@ import { NgxDataTableModule } from 'angular-9-datatable';
     AngularFireAuthModule,
     NgbModule,
     RouterModule.forRoot([
-      { path: '',               component: HomeComponent},
+      { path: '',               component: ProductsComponent},
       { path: 'login',          component: LoginComponent},
       { path: 'products',       component: ProductsComponent},
       { path: 'shopping-cart',  component: ShoppingCartComponent},

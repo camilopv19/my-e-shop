@@ -1,7 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ProductService } from 'src/app/product.service';
 import { Observable, Subscription } from 'rxjs';
-import { map } from 'rxjs/operators';
 import { Product } from 'src/app/models/product';
 // import * as company from 'src/assets/testData/company.json';
 
@@ -19,15 +18,7 @@ export class AdminProductsComponent implements OnInit, OnDestroy {
   constructor(private productService: ProductService) {
     
     //valueChanges(): Can log all plain products but no metadata
-    this.products$ = productService.getAll().snapshotChanges().pipe(
-      map(pr => pr.map(p => {
-        return {
-          id: p.payload.key,
-          title: p.payload.exportVal().title,
-          price: p.payload.exportVal().price
-        }
-      }))
-    );
+    this.products$ = productService.getAll();
 
     this.products$.subscribe(
       products => {
