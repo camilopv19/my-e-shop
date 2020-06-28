@@ -20,7 +20,8 @@ export class ProductFormComponent implements OnInit {
     title: '',
     price: null,
     category: '',
-    imageUrl: ''
+    imageUrl: '',
+    id: ''
   };           //When the form is initialized with the New Product button, the template will try to read all the props of
   //the 'undefined' object, that's why this is empty at the beggining
   id;

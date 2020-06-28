@@ -7,19 +7,15 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class CategoryService {
-  
+
   constructor(private db: AngularFireDatabase) { }
 
-  getAll(){
-    return this.db.list('categories', (cats) => {
-      return cats.orderByChild('name');     //Sort
-    }).snapshotChanges().pipe(
-      map(cats => {
-        return cats.map(c =>
-          ({ key: c.payload.key, name: c.payload.exportVal().name })
-        )
-      })
-    ); 
+  getAll() {
+    return this.db.list('categories', (cats) => cats.orderByChild('name')) //Sort
+      .snapshotChanges()
+      .pipe(map(cats => {
+        return cats.map(c => ({ key: c.payload.key, name: c.payload.exportVal().name }))
+      }));
   }
 
 
