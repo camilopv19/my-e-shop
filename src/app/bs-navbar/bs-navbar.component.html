@@ -6,11 +6,12 @@
     [attr.aria-expanded]="!isCollapsed">
     <span class="navbar-toggler-icon"></span>
   </button>
-
   <div class="collapse navbar-collapse" id="navbarsExampleDefault" [ngbCollapse]="isCollapsed">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" routerLink="/shopping-cart" (click)="toggle()">Shopping cart</a>
+        <a class="nav-link" routerLink="/shopping-cart" (click)="toggle()">Shopping cart
+          <span class="badge badge-warning badge-pill" *ngIf="cart$ | async as cart" >{{ cart.totalItemCount }}</span>
+        </a>
       </li>
       <ng-template #anonymousUser> 
         <li class="nav-item">
