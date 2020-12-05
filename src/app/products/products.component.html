@@ -10,6 +10,7 @@
           <product-card [product]="p" [shopping-cart]="cart"></product-card>
         </div>
         <div *ngIf="(i+1) % 2 === 0" class="w-100"></div>
+        <div *ngIf="(i === filteredProducts.length-1) &&  (filteredProducts.length% 2) != 0" class="col"></div>
       </ng-container>
     </div>
   </div>
