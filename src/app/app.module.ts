@@ -31,6 +31,7 @@ import { NgxDataTableModule } from 'angular-9-datatable';
 import { ProductsFilterComponent } from './products/products-filter/products-filter.component';
 import { ProductCardComponent } from './product-card/product-card.component';
 import { ShoppingCartService } from './shopping-cart.service';
+import { ProductQuantityComponent } from './product-quantity/product-quantity.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { ShoppingCartService } from './shopping-cart.service';
     ValidatorDirective,
     UrlDirective,
     ProductsFilterComponent,
-    ProductCardComponent
+    ProductCardComponent,
+    ProductQuantityComponent
   ],
   imports: [
     NgxDataTableModule,

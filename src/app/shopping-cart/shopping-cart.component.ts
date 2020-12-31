@@ -11,8 +11,7 @@ import { Router } from '@angular/router';
 export class ShoppingCartComponent implements OnInit{
   cart$;
 
-  constructor(
-    private cartService: ShoppingCartService) { }
+  constructor(private cartService: ShoppingCartService) { }
 
   async ngOnInit() {
     this.cart$ = await this.cartService.getCart(); //No need to unsuscribe 'cause this is a single-time use item thru the entire app
