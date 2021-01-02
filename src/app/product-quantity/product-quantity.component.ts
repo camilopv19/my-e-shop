@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Product } from '../models/product';
+import { ShoppingCartService } from '../shopping-cart.service';
 
 @Component({
   selector: 'product-quantity',
@@ -6,7 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product-quantity.component.css']
 })
 export class ProductQuantityComponent {
+  @Input('product') product: Product;
+  @Input('shopping-cart') shoppingCart;
 
-  constructor() { }
+  constructor(private cartService: ShoppingCartService) { }
 
+  addToCart() {
+    this.cartService.addToCart(this.product);
+  }
+  removeFromCart() {
+    this.cartService.removeFromCart(this.product);
+  }
+
+  
 }

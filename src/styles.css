@@ -10,3 +10,10 @@ body {
     height: 23vw;
     object-fit: cover;
 }
+
+.thumbnail {
+    width: 75px;
+    height: 75px;
+    border-radius: 100%;
+    background-size: cover; /*Resize without losing aspect ratio*/
+}

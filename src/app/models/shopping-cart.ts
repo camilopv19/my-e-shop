@@ -1,20 +1,25 @@
+import { Product } from './product';
 import { ShoppingCartItem } from './shopping-cart-item';
 
 export class ShoppingCart {
     shoppingCartItemsCount: number;
     items: ShoppingCartItem[] = [];
 
-    constructor(public itemsMap: ShoppingCartItem[]) {
+    constructor(private itemsMap: ShoppingCartItem[]) {
+      this.itemsMap = itemsMap || [];
       for (let pId in itemsMap){
         let item = itemsMap[pId];
-        this.items.push(new ShoppingCartItem(item.product, item.quantity));
+        this.items.push(new ShoppingCartItem({ ...item, id: pId}));
       }      
     }
 
-    // get productIds(){
-    //   return Object.keys(this.itemsMap); 
-    // // Didn't need to 'cause the annotation in the map method on the service did the trick
-    // }
+    getQuantity(product: Product) {
+      // console.log(product);
+      
+      let item = this.itemsMap[product.id]
+      return item ? item.quantity : 0;
+    }
+    
 
     get totalItemCount(){
       let count = 0;
@@ -30,4 +35,6 @@ export class ShoppingCart {
       this.items.forEach(item => total += item.totalPrice); 
         return total;
     };
+
+    
 }

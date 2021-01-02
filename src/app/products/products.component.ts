@@ -4,50 +4,51 @@ import { ActivatedRoute } from '@angular/router';
 import { Product } from '../models/product';
 import 'rxjs/add/operator/switchMap';
 import { ShoppingCartService } from '../shopping-cart.service';
-import { Subscription } from 'rxjs';
+import { Observable } from 'rxjs';
+import { ShoppingCart } from '../models/shopping-cart';
 
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.css']
 })
-export class ProductsComponent implements OnInit, OnDestroy {
+export class ProductsComponent implements OnInit {
   products$;
   category: string;
   filteredProducts: any[] = [];
   products: Product[] = [];
-  cart: any;
-  suscription: Subscription;
+  cart$: Observable<ShoppingCart>;
 
   constructor(
-    route: ActivatedRoute,
-    productService: ProductService,
+    private route: ActivatedRoute,
+    private productService: ProductService,
     private cartService: ShoppingCartService
-  ) {
-    this.products$ = productService.getAll();
+  ) { }
+  async ngOnInit() {
+    this.cart$ = await this.cartService.getCart();
 
-    this.products$.switchMap(
-      products => {
+   
+    this.populateProducts();
+  }
+
+  private populateProducts(){
+    this.products$ = this.productService
+    .getAll()
+    .switchMap(products => {
         this.products = products;
         //route.snapshot.queryParamMap... would refresh the page if the URL changes. It only needs to refresh the DOM current elements
-        return route.queryParamMap;
+        return this.route.queryParamMap;
       })
       .subscribe(params => {
         this.category = params.get('category');
-
-        this.filteredProducts = (this.category) ?
-          this.products.filter(p => p.category == this.category) :
-          this.products;
+        this.applyFilter();       
       });
-
-  }
-  async ngOnInit() {
-
-    this.suscription = (await this.cartService.getCart())
-    .subscribe( cart => this.cart = cart);
   }
 
-  ngOnDestroy(){
-    this.suscription.unsubscribe();
+  private applyFilter(){
+    this.filteredProducts = (this.category) ?
+    this.products.filter(p => p.category == this.category) :
+    this.products;
   }
+
 }

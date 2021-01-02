@@ -16,7 +16,9 @@ export class ShoppingCartComponent implements OnInit{
   async ngOnInit() {
     this.cart$ = await this.cartService.getCart(); //No need to unsuscribe 'cause this is a single-time use item thru the entire app
     // this.cart$.subscribe( cart => console.log(cart));
-     
-    
+  }
+
+  clearCart() {
+    this.cartService.clearCart();
   }
 }
