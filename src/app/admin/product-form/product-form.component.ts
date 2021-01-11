@@ -48,7 +48,7 @@ export class ProductFormComponent implements OnInit {
   }
   
   delete(){
-    if (!confirm('Estás segura de borrarte? Digo, de borrar un producto?')) return;
+    if (!confirm('Are you sure?')) return;
 
     this.productService.delete(this.id)
     this.router.navigate(['admin/products']);
