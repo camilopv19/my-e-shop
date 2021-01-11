@@ -17,3 +17,5 @@ body {
     border-radius: 100%;
     background-size: cover; /*Resize without losing aspect ratio*/
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
