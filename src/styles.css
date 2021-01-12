@@ -1,13 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
-@import "~bootstrap/dist/css/bootstrap.css";
-/* @import '~@angular/material/prebuilt-themes/deeppurple-amber.css'; */
-/* @import '~@angular/material/prebuilt-themes/indigo-pink.css'; */
-/* @import '~@angular/material/prebuilt-themes/pink-bluegrey.css'; */
-/* @import '~@angular/material/prebuilt-themes/purple-green.css'; */
 
-body {
-    padding-top: 80px;
-}
+@import "~bootstrap/dist/css/bootstrap.css";
 
 .card-img-top {
     width: 100%;
@@ -19,17 +12,26 @@ body {
     width: 75px;
     height: 75px;
     border-radius: 100%;
-    background-size: cover; /*Resize without losing aspect ratio*/
+    background-size: cover;
+    /*Resize without losing aspect ratio*/
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-.mat-toolbar,.mat-drawer-container {
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    padding-top: 80px;
+}
+
+.mat-toolbar, .mat-drawer-container {
     background: #fff;
     color: #fff;
     background-color: #fff;
-  }
+}
 
-  .mat-flat-button.mat-accent, .mat-raised-button.mat-accent, .mat-fab.mat-accent, .mat-mini-fab.mat-accent {
-    background-color:grey;
-  }
+.mat-flat-button.mat-accent, .mat-raised-button.mat-accent, .mat-fab.mat-accent, .mat-mini-fab.mat-accent {
+    background-color: grey;
+}
