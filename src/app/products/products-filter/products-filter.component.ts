@@ -3,7 +3,7 @@ import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
 import { Observable } from 'rxjs';
 import { shareReplay } from 'rxjs/operators';
 import { map } from 'rxjs/operators';
-import { CategoryService } from 'src/app/category.service';
+import { CategoryService } from 'src/app/shared/services/category.service';
 
 @Component({
   selector: 'products-filter',

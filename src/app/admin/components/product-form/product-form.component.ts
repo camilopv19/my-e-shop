@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { CategoryService } from 'src/app/category.service';
 import { Observable } from 'rxjs';
 import { take } from 'rxjs/operators';
-import { ProductService } from 'src/app/product.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Product } from 'src/app/models/product';
+import { Product } from 'src/app/shared/models/product';
+import { CategoryService } from 'src/app/shared/services/category.service';
+import { ProductService } from 'src/app/shared/services/product.service';
 
 // See implementation example at https://github.com/camilopv19/firebase-demo/blob/master/src/app/app.component.ts
 // See implementation example at https://github.com/camilopv19/firebase-demo/blob/master/src/app/app.component.html

@@ -13,6 +13,20 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "lodash",
+              "angularfire2",
+              "firebase",
+              "@firebase/app",
+              "firebase/app",
+              "@firebase/remote-config",
+              "@firebase/performance",
+              "@firebase/functions",
+              "@firebase/firestore",
+              "@firebase/database",
+              "angularfire2/database",
+              "angularfire2/auth"
+           ],
             "outputPath": "dist/my-e-shop",
             "index": "src/index.html",
             "main": "src/main.ts",

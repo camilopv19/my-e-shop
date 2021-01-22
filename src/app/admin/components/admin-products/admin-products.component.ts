@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ProductService } from 'src/app/product.service';
 import { Observable, Subscription } from 'rxjs';
-import { Product } from 'src/app/models/product';
+import { Product } from 'src/app/shared/models/product';
+import { ProductService } from 'src/app/shared/services/product.service';
 // import * as company from 'src/assets/testData/company.json';
 
 @Component({
