@@ -3,8 +3,10 @@
 }
 .card-footer {
     padding: 0;
+    background: #fff;
 }
 
 .card-footer button{
     cursor: pointer;
+    text-transform: uppercase;
 }

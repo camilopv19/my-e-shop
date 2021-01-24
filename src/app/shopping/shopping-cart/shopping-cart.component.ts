@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ShoppingCartService } from '../shared/services/shopping-cart.service';
-import { AuthService } from '../shared/services/auth.service';
+import { ShoppingCartService } from '../../shared/services/shopping-cart.service';
+import { AuthService } from '../../shared/services/auth.service';
 import { Router } from '@angular/router';
 
 @Component({

@@ -1,0 +1,94 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~font-awesome/css/font-awesome.css";
+
+.card-img-top {
+    width: 100%;
+    height: 23vw;
+    object-fit: cover;
+}
+
+.thumbnail {
+    width: 75px;
+    height: 75px;
+    border-radius: 100%;
+    background-size: cover;
+    /*Resize without losing aspect ratio*/
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    padding-top: 80px;
+}
+
+.mat-toolbar, .mat-drawer-container {
+    background: #fff;
+    color: #fff;
+    background-color: #fff;
+}
+
+.mat-flat-button.mat-accent, .mat-raised-button.mat-accent, .mat-fab.mat-accent, .mat-mini-fab.mat-accent {
+    background-color: grey;
+}
+
+$primary-color: #17a2b8;
+$primary-color-hover: #47a2b8;
+
+.list-group-item.active {
+    background-color: $primary-color;
+    border-color: $primary-color;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: $primary-color;
+}
+
+p, h5{
+    text-align: center;
+}
+
+.navbar { 
+    border-bottom: 3px solid #e7e7e7;
+  }
+
+  .navbar-light .navbar-brand {
+    color: $primary-color;
+  }
+  
+  .navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover {
+    color: $primary-color-hover;
+  }
+  
+  .list-group-item.active {
+    background-color: $primary-color;
+    border-color: $primary-color;
+  }
+  
+  .btn-primary {
+    background-color: $primary-color;
+    border-color: $primary-color;
+  }
+  
+  .btn-primary:hover {
+    background-color: $primary-color-hover;
+    border-color: $primary-color-hover;
+  }
+  
+  .btn-primary.disabled, .btn-primary:disabled {
+    background-color: $primary-color;
+    border-color: $primary-color;
+  }
+  
+  .form-control:focus {
+    border-color: $primary-color;
+  }
+
+  .col{
+    margin-bottom: 1.5rem;
+  }
